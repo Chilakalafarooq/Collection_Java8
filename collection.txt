@@ -1,0 +1,1029 @@
+package p1;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+public class A{
+public static void main(String[] args) {
+
+	ArrayList x= new ArrayList();
+		x.add(100);
+		x.add('a');
+		x.add(null);
+		x.add(null);
+		x.add(10.00);
+		x.add("Java");
+		x.add(1);
+		x.add(100);
+		x.add('%');
+		System.out.println(x);//[100, a, null, null, 10.0, Java, 1, 100, %]
+		
+		
+		System.out.println(x.get(3));//it will read the data present in index.//null
+		
+		
+		x.set(2, "Appu");//it will help us to change the data present in the index.
+		System.out.println(x);//[100, a, Appu, null, 10.0, Java, 1, 100, %]
+	
+		//it maintain insertion order 
+		//it contain duplicate elements
+		
+		Iterator itr = x.iterator();// it will read the data present in the objects.
+		while (itr.hasNext()) {
+			System.out.println(itr.next());
+			/*100
+			a
+			Appu
+			null
+			10.0
+			Java
+			1
+			100
+			%*/
+			System.out.println(x.size());//9 it will help us find the size of the objects present in collection.
+			
+			/*x.removeAll(x);
+			System.out.println();
+			System.out.println(x.isEmpty());//true 
+			System.out.println(x.containsAll(x));//it help us to check all group of objects are present or not it written boolean value true&false
+			System.out.println(x.contains(100));//it will check particular object index present or not.
+			
+			
+			/*x.clear();//it help us to clear all objects present in the list.
+			System.out.println(x);//[]*/
+
+
+String str []= {"Banana","Apple","Grapes"};
+	for (String string : str) {
+		System.out.println(string);
+	
+	}
+	ArrayList list = new ArrayList(Arrays.asList(str));
+	System.out.println(list);
+		}
+}
+}
+Example 2:
+package p1;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Iterator;
+
+
+public class A {
+public static void main(String []args) {
+	
+/*	ArrayList x= new ArrayList();
+	//ArrayList<Integer> x= new ArrayList<Integer>();
+x.add('F');
+
+x.add('A');
+x.add('B');
+x.add('D');
+x.add('C');
+x.add('A');
+
+System.out.println(x);//[f, A, c, D, E, G]
+Collections.sort(x);//[A, B, C, D, E, F]
+System.out.println(x);
+Collections.sort(x,Collections.reverseOrder());//[F, E, D, C, B, A]
+
+System.out.println(x);
+//Shuffling
+Collections.shuffle(x);//[B, A, F, C, A, D]
+System.out.println(x);
+
+	/*x.add(100);
+	x.add("Farooq");
+	x.add('A');
+	x.add(null);
+	x.add(true);
+	x.add(100);
+	System.out.println(x);//[100, Farooq, A, null, true, 100]
+Collections.sort(x);
+System.out.println(x);
+	
+	
+		System.out.println(x.size());	//It will written size of the array list 6
+		x.remove(0);
+		System.out.println(x);// It will remove the index number [Farooq, A, null, true, 100]
+		
+		//System.out.println(x.get(1));// It will written the value present in the given index A
+		System.out.println(x.contains("Farooq"));
+		System.out.println(x.containsAll(x));
+		
+		/*for (Object e : x) {
+			System.out.println(e);*/
+			
+			
+/*for (int i=0;i<x.size();i++) {
+	System.out.print(i);
+}
+}}
+}*/
+
+String arr[]= {"Tom","Mom","Kom"};
+for(String val: arr){
+	System.out.println(val);
+	//Tom
+	//Mom
+	//Kom
+}
+ArrayList a = new ArrayList(Arrays.asList(arr));
+System.out.println(a);//[Tom, Mom, Kom]
+
+
+
+}
+}
+	package p1;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+
+public class List {
+public static void main(String[] args) {
+	
+	Collection<Integer> evennumber =new ArrayList<Integer>() ;
+	evennumber.add(100);
+	evennumber.add(200);
+	evennumber.add(300);
+	evennumber.add(400);
+	evennumber.add(500);
+	evennumber.add(600);
+	evennumber.add(700);
+	
+	System.out.println(evennumber);//[100, 200, 300, 400, 500, 600, 700]
+	System.out.println(evennumber.size());//7
+System.out.println(evennumber.containsAll(evennumber));//true
+	
+//	evennumber.clear();
+//	System.out.println(evennumber);//[]
+	
+//evennumber.removeAll(evennumber);
+//System.out.println(evennumber);//[]
+	
+	//System.out.println(Collections.EMPTY_LIST);//[]
+	
+	System.out.println(evennumber.isEmpty());
+	
+	
+	Collection<Integer> oddnumber =new ArrayList<Integer>() ;
+	oddnumber.add(3000);
+	oddnumber.add(7000);
+	oddnumber.add(5000);
+	oddnumber.add(1000);
+	oddnumber.addAll(evennumber);
+	System.out.println(oddnumber);
+	
+	
+}
+}
+
+package p1;
+
+import java.util.ArrayList;
+import java.util.stream.Collectors;
+
+public class A {
+public static void main(String[] args) {
+	ArrayList< String> array = new ArrayList< String>();
+	array.add(null);
+	array.add(null);
+	array.add("tom");
+	array.add("mike");
+	array.add("Tony");
+	array.add("Cat");
+	array.add("Dog");
+	array.add(null);
+	System.out.println(array);//[null, null, tom, mike, Tony, Cat, Dog, null]
+	
+	
+	//This method help us to read the data present in our array elements
+	array.stream().forEach(arr -> System.out.println(arr));
+//	null
+//	null
+//	tom
+//	mike
+//	Tony
+//	Cat
+//	Dog
+//	null
+	
+	// This method help us to remove Null values present in out elements
+	ArrayList< String> a=	
+			(ArrayList<String>) array.stream().
+				filter(y-> y!=null).
+					collect(Collectors.toList());
+	System.out.println(a);//[tom, mike, Tony, Cat, Dog]
+	
+}
+}
+package p1;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class A {
+public static void main(String[] args) {
+	ArrayList< String> array = new ArrayList< String>();
+	//array.add(null);
+	//array.add(null);
+	array.add("tom");
+	array.add("tom");
+	array.add("Tony");
+	array.add("Cat");
+	array.add("Dog");
+	//array.add(null);
+	System.out.println(array);//[null, null, tom, mike, Tony, Cat, Dog, null]
+	
+//System.out.println(array.remove(0));
+	Collections.sort(array);
+	System.out.println(array);//[Cat, Dog, Tony, tom, tom]
+	
+	Collections.shuffle(array);
+	System.out.println(array);//[tom, tom, Dog, Tony, Cat]
+	
+	//This method help us print in reversr order
+	Collections.sort(array,Collections.reverseOrder());
+	System.out.println(array);//[tom, tom, Tony, Dog, Cat]
+	
+	//This method help us to suffle in random order
+	Collections.shuffle(array);
+	System.out.println(array);//[Dog, tom, Cat, Tony, tom]
+	
+	//This method help us to remove duplicate elements in list oblects
+	List<String> collect = array.
+			stream().distinct().
+				collect(Collectors.toList());
+	System.out.println(collect);//[null, tom, Tony, Cat, Dog]
+	
+	
+	//This method help us to read the data present in our array elements
+	array.stream().forEach(arr -> System.out.println(arr));
+//	null
+//	null
+//	tom
+//	mike
+//	Tony
+//	Cat
+//	Dog
+//	null
+	
+	// This method help us to remove Null values present in out elements
+	ArrayList< String> a=	
+			(ArrayList<String>) array.stream().
+				filter(y-> y!=null).
+					collect(Collectors.toList());
+	System.out.println(a);//[tom, mike, Tony, Cat, Dog]
+	
+	
+}
+}
+
+
+
+* ArrayList maintain insertion order.
+* Arraylist maintain insertion order.
+* Arraylist is a internally as a dynamic array.
+* Arraylist can store both homogeneous & hetrogeneous data.
+* Arraylist list initial size is 10.
+* when we exceed the initial size,automatically arraylist increase the size by 1.5 times.
+
+* Arraylist reading the data has a best performance.
+
+///////////////////////////////////////////////////////////
+
+* Linkedlist maintain insertion order.
+* Linkedlist maintain insertion order.
+* Llinkedlist is a internally as Doubly linked list.
+* Linkedlist can store both homogeneous & hetrogeneous data.
+* Linkedlist is non-synchronized.
+
+* When we go for linkedlist  more number of  insert/deletion.
+
+
+package p1;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+
+public class A{
+public static void main(String[] args) {
+
+	LinkedList x= new LinkedList();
+		x.add(100);
+		x.add('a');
+		x.add(null);
+		x.add(null);
+		x.add(10.00);
+		x.add("Java");
+		x.add(1);
+		x.add(100);
+		x.add('%');
+		System.out.println(x);//[100, a, null, null, 10.0, Java, 1, 100, %]
+		
+		
+		System.out.println(x.get(3));//it will read the data present in index.//null
+		
+		
+		x.set(2, "Appu");//it will help us to change the data present in the index.
+		System.out.println(x);//[100, a, Appu, null, 10.0, Java, 1, 100, %]
+	
+		//it maintain insertion order 
+		//it contain duplicate elements
+		
+		Iterator itr = x.iterator();// it will read the data present in the objects.
+		while (itr.hasNext()) {
+			System.out.println(itr.next());
+			/*100
+			a
+			Appu
+			null
+			10.0
+			Java
+			1
+			100
+			%*/
+			System.out.println(x.size());//9 it will help us find the size of the objects present in collection.
+			
+			/*x.removeAll(x);
+			System.out.println();
+			System.out.println(x.isEmpty());//true 
+			System.out.println(x.containsAll(x));//it help us to check all group of objects are present or not it written boolean value true&false
+			System.out.println(x.contains(100));//it will check particular object index present or not.
+			
+			
+			/*x.clear();//it help us to clear all objects present in the list.
+			System.out.println(x);//[]*/
+
+		}
+}
+}
+package p1;
+
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.LinkedList;
+
+public class B {
+public static void main(String[] args) {
+	
+	LinkedList< String> l = new LinkedList< String>();
+	l.add("Dragon Fruit");
+	l.add("Mango");
+	l.add("Grapes");
+	l.add("Banana");
+	l.add("Apple");
+	l.add("Guava");
+	l.add("Pineapple");
+	l.add("Apple");
+	System.out.println(l);//[Dragon Fruit, Mango, Grapes, Banana, Apple, Guava, Pineapple, Apple]
+	
+	System.out.println(l.containsAll(l));//true
+//	System.out.println(Collections.emptyList());//[]
+	//System.out.println(Collections.emptyIterator());//java.util.Collections$EmptyIterator@1175e2db
+	System.out.println(Collections.max(l));
+	
+	System.out.println(Collections.reverseOrder());
+	System.out.println(Collections.min(l));
+	
+	for (String string : l) {
+		System.out.println(string);
+		
+	}
+	
+	Iterator< String> itr= l.iterator();
+	while (itr.hasNext()) {
+		System.out.println(itr.next());
+		
+	}
+//This method help us to retrive data
+	l.stream().forEach(l1->System.out.println(l1));
+	}
+
+}
+Output
+[Dragon Fruit, Mango, Grapes, Banana, Apple, Guava, Pineapple, Apple]
+true
+Pineapple
+java.util.Collections$ReverseComparator@1175e2db
+Apple
+Dragon Fruit
+Mango
+Grapes
+Banana
+Apple
+Guava
+Pineapple
+Apple
+Dragon Fruit
+Mango
+Grapes
+Banana
+Apple
+Guava
+Pineapple
+Apple
+Dragon Fruit
+Mango
+Grapes
+Banana
+Apple
+Guava
+Pineapple
+Apple
+
+////////////////////////////////////////////////
+
+* Vector is internally implemented as dynamic array.
+* Vector is Synchronized.
+* vector is Slow process.
+* Vector is legacy class.
+* vector is thread safer.
+
+package p1;
+
+import java.util.Vector;
+
+public class H{
+public static void main(String args[]) {  
+    Vector v = new Vector();  
+    v.add("Tiger");  
+    v.add("Lion");  
+    v.add("Dog");  
+    v.add("Elephant"); 
+    v.add(100);
+    v.add(100);
+    v.add('f');
+    v.add(null);
+    System.out.println(v);//[Tiger, Lion, Dog, Elephant, 100, 100, f]
+    
+    System.out.println(v.contains(100));//true
+    
+    System.out.println(v.get(4));
+    for (Object object : v) {
+    	System.out.println(object);
+		
+	}
+}}
+Output
+[Tiger, Lion, Dog, Elephant, 100, 100, f, null]
+true
+100
+Tiger
+Lion
+Dog
+Elephant
+100
+100
+f
+null
+package p1;
+
+import java.util.Vector;
+
+public class Vectorlist {
+public static void main(String[] args) {
+	Vector<Integer > v= new Vector<Integer > ();
+	v.add(10);
+	v.add(20);
+	v.add(30);
+	v.add(40);
+	v.add(50);
+	v.add(60);
+	v.add(70);
+	v.add(80);
+	v.add(90);
+	
+	System.out.println(v);//[10, 20, 30, 40, 50, 60, 70, 80, 90]
+	System.out.println(v.size());
+	System.out.println(v.clone());
+	System.out.println(v.containsAll(v));//true
+	
+	v.stream().forEach(vector-> System.out.println(vector));
+	
+}
+}
+Output
+[10, 20, 30, 40, 50, 60, 70, 80, 90]
+9
+[10, 20, 30, 40, 50, 60, 70, 80, 90]
+true
+10
+20
+30
+40
+50
+60
+70
+80
+90
+
+///////////////////////////////////////////////
+
+ * Duplicate elements are not allowed.
+ * Insertion order is not present//[farooq, null, 100, f, true]
+ * In hashset internally use as a hashcode. because insert the element by using hashcode thchnique.
+ * Hashset can store null values.
+ * dafault size is 16 and loadfactor  is 0.75
+
+
+Here are the methods present in the Set interface in Java:
+
+add(E e): Adds the specified element to the set if it is not already present.
+
+addAll(Collection<? extends E> c): Adds all of the elements in the specified collection to the set if they are not already present.
+
+clear(): Removes all of the elements from the set.
+
+contains(Object o): Returns true if the set contains the specified element.
+
+containsAll(Collection<?> c): Returns true if the set contains all of the elements in the specified collection.
+
+equals(Object o): Compares the specified object with this set for equality.
+
+hashCode(): Returns the hash code value for this set.
+
+isEmpty(): Returns true if the set contains no elements.
+
+iterator(): Returns an iterator over the elements in the set.
+
+remove(Object o): Removes the specified element from the set if it is present.
+
+removeAll(Collection<?> c): Removes all of the elements from the set that are present in the specified collection.
+
+retainAll(Collection<?> c): Retains only the elements in the set that are contained in the specified collection.
+
+size(): Returns the number of elements in the set.
+
+spliterator(): Returns a Spliterator over the elements in the set.
+
+stream(): Returns a sequential Stream over the elements in the set.
+
+toArray(): Returns an array containing all of the elements in the set.
+
+toArray(T[] a): Returns an array containing all of the elements in the set; the runtime type of the returned array is that of the specified array
+package p1;
+
+import java.util.HashSet;
+import java.util.Iterator;
+
+public class A{
+public static void main(String...x){
+/*
+ * 
+ */
+HashSet h = new HashSet();// Insert the element by using hashcode.Internally use hashcode(). 
+h.add('f');
+h.add(true);
+h.add("farooq");
+h.add(100);
+h.add(null);
+h.add(null);//Duplicate elements are not allowed.
+System.out.println(h);//Insertion o
+
+
+//h.remove(null);
+/*System.out.println(h);//[farooq, 100, f, true]
+Iterator itr =h.iterator();
+	while(itr.hasNext()) {
+		System.out.println(itr.next());*/
+		/*
+		 farooq
+		100
+		f
+		true
+		 */
+		/*System.out.println(h.containsAll(h));//true
+		System.out.println(h.isEmpty());//false
+		System.out.println(h.contains('f'));//true
+		System.out.println(h.removeAll(h));//true
+		System.out.println(h.size());//After removeall it is 0*/
+
+
+HashSet<Integer> even = new HashSet<Integer>();
+even.add(200);
+even.add(400);
+even.add(800);
+even.add(600);
+System.out.println(even);//[400, 800, 200, 600]
+
+
+HashSet<Integer> odd= new HashSet<Integer>();
+odd.add(30);
+odd.add(50);
+odd.add(70);
+odd.addAll(even);
+System.out.println(odd);//[400, 800, 50, 70, 200, 600, 30]
+
+System.out.println(odd.removeAll(odd));
+
+Iterator itr = even.iterator();
+
+while(itr.hasNext()) {
+	System.out.println(itr.next());
+/*
+ 400
+800
+200
+600
+ */
+}
+}
+
+}
+package p1;
+
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
+import java.util.stream.Collectors;
+
+public class F {
+public static void main(String[] args) {
+	HashSet<String> set  = new HashSet<String>();
+	set.add(null);
+	set.add("mango");
+	set.add("Apple");
+	set.add("Grapes");
+	set.add("Pineapple");
+	set.add("Dragon Fruit");
+	set.add("Banana");
+	set.add("mango");
+	set.add("mango");
+	
+	System.out.println(set);//[null, Apple, Grapes, Dragon Fruit, Pineapple, mango, Banana]
+	
+	//This is one method to read data in hashset by using java 8 features
+	set.stream().forEach(x->System.out.println(x));
+//	null
+//	Apple
+//	Grapes
+//	Dragon Fruit
+//	Pineapple
+//	mango
+//	Banana
+	//This method help us to read the data
+	String [] arr = new String[5];
+	arr=set.toArray(arr);
+	for (String string : arr) {
+		System.out.println(string);
+		
+	}
+//	null
+//	Apple
+//	Grapes
+//	Dragon Fruit
+//	Pineapple
+//	mango
+//	Banana
+	
+	//This is the another method to read the data in collection
+for (String string : set) {
+	System.out.println(string);
+//	null
+//	Apple
+//	Grapes
+//	Dragon Fruit
+//	Pineapple
+//	mango
+//	Banana
+	
+	
+	//This is the another method to read the data in collection
+	Iterator<String> itr = set.iterator();
+	while (itr.hasNext()) {
+		System.out.println(itr.next());
+//		null
+//		Apple
+//		Grapes
+//		Dragon Fruit
+//		Pineapple
+//		mango
+//		Banana
+	}
+	
+	//This method help us remove null values
+		Set<String> collect = set.stream().
+								filter($-> $!=null).
+									collect(Collectors.toSet());
+		System.out.println(collect);//[Apple, Grapes, Dragon Fruit, Pineapple, mango, Banana]
+}
+}
+}
+package p1;
+
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
+import java.util.stream.Collectors;
+
+public class F {
+public static void main(String[] args) {
+	HashSet<String> set  = new HashSet<String>();
+	//set.add(null);
+	set.add("mango");
+	set.add("Apple");
+	set.add("Grapes");
+	set.add("Pineapple");
+	set.add("Dragon Fruit");
+	set.add("Banana");
+	set.add("mango");
+	set.add("mango");
+
+long count = set.stream().filter(a-> a.contains("p")).count();
+	System.out.println("Count the letters.."+count);//Count the letters..3
+	
+	
+	System.out.println(set);//[null, Apple, Grapes, Dragon Fruit, Pineapple, mango, Banana]
+	
+ set.removeIf(z-> z.startsWith("A"));
+	System.out.println(set);//[Grapes, Dragon Fruit, Pineapple, mango, Banana]
+	
+	
+	boolean removeIf = set.removeIf(z-> z.startsWith("m"));
+	System.out.println(removeIf);//true
+	
+	
+	
+	//This method help us to read the data
+	String [] arr = new String[5];
+	arr=set.toArray(arr);
+	for (String string : arr) {
+		System.out.println(string);
+		
+	}
+//	null
+//	Apple
+//	Grapes
+//	Dragon Fruit
+//	Pineapple
+//	mango
+//	Banana
+	System.out.println();
+	//This is one method to read data in hashset by using java 8 features
+	set.stream().forEach(x->System.out.println(x));
+//	null
+//	Apple
+//	Grapes
+//	Dragon Fruit
+//	Pineapple
+//	mango
+//	Banana
+
+	
+	//This is the another method to read the data in collection
+for (String string : set) {
+	System.out.println(string);
+//	null
+//	Apple
+//	Grapes
+//	Dragon Fruit
+//	Pineapple
+//	mango
+//	Banana
+	
+	
+	//This is the another method to read the data in collection
+	Iterator<String> itr = set.iterator();
+	while (itr.hasNext()) {
+		System.out.println(itr.next());
+//		null
+//		Apple
+//		Grapes
+//		Dragon Fruit
+//		Pineapple
+//		mango
+//		Banana
+	}
+	
+	//This method help us remove null values
+		Set<String> collect = set.stream().
+								filter($-> $!=null).
+									collect(Collectors.toSet());
+		System.out.println(collect);//[Apple, Grapes, Dragon Fruit, Pineapple, mango, Banana]
+}
+}
+}
+
+///////////////////////////////////////////////////
+
+* Treeset sort the data in ascending order.
+* Treeset contain only unique elements.
+* Treeset can store only homogeneous data.
+
+package p1;
+
+import java.util.Iterator;
+import java.util.TreeSet;
+
+public class E {
+public static void main(String[] args) {
+	TreeSet t = new TreeSet();
+	t.add("A");
+	t.add("C");
+	t.add("D");
+	t.add("B");
+	System.out.println(t);
+	System.out.println(t.size());
+	System.out.println(t.contains("mom"));
+	System.out.println(t.isEmpty());
+	t.remove("lion");
+	System.out.println(t);
+	System.out.println(t.size());
+	/*for (Object e : t) {
+		System.out.println(e);*/
+		Iterator itr = t.iterator();
+		while(itr.hasNext()) {
+			System.out.println(itr.next());
+		}
+		
+	}
+}
+output
+[A, B, C, D]
+4
+false
+false
+[A, B, C, D]
+4
+A
+B
+C
+D
+///////////////////////////////////////////////////
+* Hashmap is internally worked as hashtable .
+* Hashmap is non-synchronize(multiple thread).
+* Hashmap insertion order is not present.
+* Hashmap is not thread safer.
+* In hashmap key contain only one null value.
+* In hashmap value contain more than one null value.
+
+
+
+package p1;
+
+import java.util.HashMap;
+
+public class F {
+public static void main(String[] args) {
+	
+	
+	HashMap map = new HashMap();
+	map.put(1,'f');
+	map.put(4, "Farooq");
+	map.put(5, "Mike");
+	map.put(6, "Siva");
+	map.put(7, "Farooq");
+	map.put(8, null);
+	map.put(null, null);
+	
+	map.put(3, null);
+	System.out.println(map);
+	
+System.out.println(map.get(map));//null
+System.out.println(map.keySet());//[null, 1, 3, 4, 5, 6, 7, 8]
+System.out.println(map.values());//[null, f, null, Farooq, Mike, Siva, Farooq, null]
+
+for (Object i :map.keySet()) {//it will print individual keys and values
+	
+	System.out.println(i+" "+map.get(i));
+} 
+
+
+	
+}
+}
+output{null=null, 1=f, 3=null, 4=Farooq, 5=Mike, 6=Siva, 7=Farooq, 8=null}
+null
+[null, 1, 3, 4, 5, 6, 7, 8]
+[null, f, null, Farooq, Mike, Siva, Farooq, null]
+null null
+1 f
+3 null
+4 Farooq
+5 Mike
+6 Siva
+7 Farooq
+8 null
+///////////////////////////////////////////////
+
+(Stream API) form Java 8 Feature
+
+package p1;
+
+import java.util.ArrayList;
+import java.util.List;
+
+
+
+/*class product{//Here iam creating class product and paramitrerized constuctor.
+	private int id;
+	private String name;
+	double price;
+
+	public product(int id, String Name, double price){
+		this.id=id;
+		this.name= Name;
+		this.price=price;
+	}
+}
+public class Filter {
+public static void main(String[] args) { // here i am creating class filter and also create list Object
+	List<product> productlist= new ArrayList<product>();
+	productlist.add(new product(1,"Hp Laptop",26000));
+	productlist.add(new product(2,"Dell Laptop",36000));
+	productlist.add(new product(3,"Omn Laptop",28000));
+	productlist.add(new product(4,"Mi Laptop",16000));
+	productlist.add(new product(5,"Lenovo Laptop",20000));
+	productlist.add(new product(6,"Apple Laptop",260000));
+	//Here i am using API
+	
+	productlist.stream()
+		.filter(p->p.price<36000)
+			.forEach(pr->System.out.println(pr.price));
+	/*26000.0
+	28000.0
+	16000.0
+	20000.0*/
+
+	
+	
+class Student {
+	
+	long id;
+	String Name;
+	String Course;
+	
+	public  Student(long id, String Name,String Course) {
+	
+	this.id=id;
+	this.Name=Name;
+	this.Course=Course;
+}
+
+
+}
+
+public class Filter{
+	
+	public static void main(String...x) {
+		
+		List<Student> studentlistobject= new ArrayList<Student>();
+		
+		// Y i am creating of new Student(100,"Farooq","Mechanical")) because i am  create student object here.
+		
+		studentlistobject.add(new Student(100,"Farooq","Mechanical"));
+		studentlistobject.add(new Student(101,"Mallika","PHB"));
+		studentlistobject.add(new Student(102,"Siva","Next Wave"));
+		studentlistobject.add(new Student(103,"Tom","CSE"));
+		studentlistobject.add(new Student(104,"Cat","IT"));
+		studentlistobject.add(new Student(105,"King","ECE"));
+		studentlistobject.add(new Student(106,"Lion","Forest"));
+		studentlistobject.add(new Student(107,"Mom","CIVIL"));
+		studentlistobject.add(new Student(108,"Farooq","EEE"));
+		studentlistobject.add(new Student(109,"Giraffe","Food Technology"));
+		
+		
+		studentlistobject.stream()
+			.filter(Student->Student.id>106)//107,108,109
+			.forEach(Stu->System.out.println(Stu.Course));//Mom,Farooq,Giraffe
+	}
+}
+///////////////////////////////////////////////////
+
+
+
+@FunctionalInterface
+
+interface Cab{
+
+public void booked();
+}
+
+/*class ola implementa Cab{
+
+@override
+public void booked(){
+System.out.println("ola cab is booked");
+}
+}*/
+
+public class A{
+public static void main(String ...x){
+
+Cab cab = ()->System.out.println("ola cab is booked");
+cab.booked();
+}
+}
