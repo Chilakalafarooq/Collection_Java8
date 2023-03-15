@@ -17,6 +17,104 @@ System.out.println(temp[i]);
 }
 }}
 /////////////////////////////////
+package p1;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+
+
+public class A {
+	    public static void main(String[] args) {
+	    	int arr [] = {34,56,7,65,2,3,3,4,1,66,78,66,99,89,76,56,90,90,3,3,3};
+	    	
+	    	int [] removeduplicatre =Arrays.stream(arr).distinct().sorted().toArray();
+	    	System.out.println("Original array  values.."+Arrays.toString(arr));
+	    	System.out.println("After remove duplicate selements.."+Arrays.toString(removeduplicatre));
+	    	int overallsum =0;
+	    	for (int i = 0; i < removeduplicatre.length; i++) {
+	    		overallsum+=removeduplicatre[i];
+				
+			}
+	    	System.out.println("OverallSum:"+overallsum);
+	    }
+	    	int overallsum =0;
+	    	for (int i = 0; i < removeduplicatre.length; i++) {
+	    		overallsum+=removeduplicatre[i];
+	    		System.out.println("OverallSum:"+overallsum);
+			}
+	    
+	    
+	    short overallsumarr =0;
+	    	for (int j = 0; j < arr.length; j++) {
+	    		overallsumarr+=arr[j];
+	    		System.out.println("OverallSum:"+overallsumarr);
+	    
+	    	double average =(double)overallsum/arr.length;
+	    	double ave =(double)overallsum/removeduplicatre.length;
+	    	System.out.println(average);
+	    	System.out.println(ave);
+	    
+
+}}}
+
+	
+	    
+}
+
+
+//	    	System.out.println("Beforing sorting:"+Arrays.toString(arr));
+//	    	int f;
+//	    	for (int j = 0; j < arr.length-1; j++) {
+//	    		for (int i = 0; i < arr.length-1; i++) {
+//	    			if(arr[i]>arr[i+1]) {
+//	    			f=arr[i];
+//	    			arr[i]=arr[i+1];
+//	    			arr[i+1]=f;
+//					
+//				}
+//	    		}
+//			}
+//	    	System.out.println("After sorting :"+Arrays.toString(arr));
+//	    	
+//	    	Arrays.sort(arr);
+//	    	int[] removeduplicates= Arrays.stream(arr).distinct().toArray();
+//	    	
+//	    	System.out.println("After sorting & Removing duplicates:"+Arrays.toString(removeduplicates));
+//	    	
+
+
+
+
+
+////////////////////////////////
+package p1;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+
+
+public class A {
+	    public static void main(String[] args) {
+	        int arr[] = {22,56,22,2, 4, 5, 6, 6, 7, 8, 9, 5};
+	        System.out.println("Original array: " + Arrays.toString(arr));
+	        int[] distinctArray = Arrays.stream(arr).distinct().sorted().toArray();
+	        System.out.println("After Removing duplicate Elements & Sorting array: " + 
+	        Arrays.toString(distinctArray));
+	        int n=arr.length;
+	        Arrays.sort(arr);
+	        //Find firstmax & firstmin
+	        int firstmax =arr[n-2];
+	        int firstmin =arr[1];
+	        System.out.println(firstmax+","+firstmin);
+	    }
+	
+
+}
+
+
+/////////////////////////////////
 public class A{//array sorting
 public static void main (String[] args){
 int x[]={30,40,60,10,90};
@@ -35,6 +133,93 @@ x[i+1]=temp;
 }
 System.out.println("After sorting ...."+Arrays.toString(x));
 }}
+/////////////////////////////////////////
+
+Remove duplicate elements along with array sorting
+package p1;
+
+import java.util.Arrays;
+import java.util.LinkedHashSet;
+import java.util.Set;
+
+public class A {
+public static void main(String[] args) {
+	int x[] = {2,45,45,67,3,5,6,6,78,90,12,12,3};
+	System.out.println("Before Sorting.."+Arrays.toString(x));
+
+	int z;
+	for (int j = 0; j < x.length-1; j++) {
+		for (int i = 0; i < x.length-1; i++) {
+			if(x[i]>x[i+1]) {
+				z=x[i];
+				x[i]=x[i+1];
+				x[i+1]=z;
+				
+				}
+					
+				}
+	}
+	System.out.println("After Sorting..."+Arrays.toString(x));
+	 Arrays.sort(x);
+     //System.out.println("After Sorting..."+Arrays.toString(x));
+
+     int[] unique = Arrays.stream(x).distinct().toArray();
+     System.out.println("After Removing Duplicates..."+Arrays.toString(unique));
+ 
+
+	// Remove duplicates
+//	int[] unique = new int[x.length];
+//	int j = 0;
+//	unique[j] = x[0];
+//	for (int i = 1; i < x.length; i++) {
+//	    if (x[i] != x[i-1]) {
+//	        j++;
+//	        unique[j] = x[i];
+//	    }
+//	}
+//	int[] sortedUnique = Arrays.copyOf(unique, j+1);
+//	System.out.println("After Removing Duplicates..."+Arrays.toString(sortedUnique));
+
+}
+}
+package p1;
+
+import java.util.Arrays;
+import java.util.LinkedHashSet;
+import java.util.Set;
+
+public class A {
+public static void main(String[] args) {
+	int x[] = {2,45,45,67,3,5,6,6,78,90,12,12,3};
+	System.out.println("Before Sorting.."+Arrays.toString(x));
+
+	int z;
+	for (int j = 0; j < x.length-1; j++) {
+		for (int i = 0; i < x.length-1; i++) {
+			if(x[i]>x[i+1]) {
+				z=x[i];
+				x[i]=x[i+1];
+				x[i+1]=z;
+				
+				}
+					
+				}
+	}
+	System.out.println("After Sorting..."+Arrays.toString(x));
+	Arrays.sort(x);
+	int [] unique = Arrays.stream(x).distinct().toArray();
+	System.out.println("After sorting and remove duplicate elements..."+Arrays.toString(unique));
+
+//	Before Sorting..[2, 45, 45, 67, 3, 5, 6, 6, 78, 90, 12, 12, 3]
+//			After Sorting...[2, 3, 3, 5, 6, 6, 12, 12, 45, 45, 67, 78, 90]
+//			After sorting and remove duplicate elements...[2, 3, 5, 6, 12, 45, 67, 78, 90]
+
+
+}
+}
+
+
+
 
 ///////////////////////////////////////
 package p1;
@@ -68,6 +253,63 @@ MONKEY
 farooq
 cat
 monkey
+package p1;
+
+import java.util.Arrays;
+import java.util.LinkedHashSet;
+import java.util.Set;
+
+public class A {
+public static void main(String[] args) {
+	String str [] = {"farooq","Sharmila","Siva"};
+	
+	for (int i = 0; i < str.length; i++) {
+		
+		
+//		boolean startsWith = str[i].startsWith("f");
+//		System.out.println(startsWith);
+//		boolean endsWith = str[i].endsWith("a");
+//		System.out.println(endsWith);
+		
+//		String upperCase = str[i].toUpperCase();
+//		//System.out.println(upperCase);
+//		
+//	String lowerCase = str[i].toLowerCase();
+//	System.out.println(lowerCase);
+//	
+//	System.out.println(str.length);
+//	for (String string : str) {
+//		System.out.println(string);
+		
+	//}
+}
+}
+}
+true
+false
+FAROOQ
+farooq
+3
+farooq
+Sharmila
+Siva
+false
+true
+SHARMILA
+sharmila
+3
+farooq
+Sharmila
+Siva
+false
+true
+SIVA
+siva
+3
+farooq
+Sharmila
+Siva
+
 
 ///////////////////////////////////////
 public class A{//Find largest and smallest or Find max and min 
@@ -86,6 +328,53 @@ System.out.print("Print min number..."+min);
 }}
 
 }
+/////////////////////////////////
+package p1;
+
+import java.util.Arrays;
+import java.util.LinkedHashSet;
+import java.util.Set;
+
+public class A {
+public static void main(String[] args) {
+	int x[]= {12,4,56,78,90,9,34,56,34,12,4,3,5,3,5,2,4,1,};
+	int n= x.length;
+	Arrays.sort(x);
+	//Firstmax & Firstmin elements
+	int Firstmax =x[n-1];
+	int Firstmin=x[0];
+	System.out.println(Firstmax+","+Firstmin);
+	//Secondmax & Secondmin
+	int Secondmax =x[n-2];
+	int Secondmin=x[1];
+	System.out.println(Secondmax+","+Secondmin);
+	//Thirdmax & Thirdmin
+	int Thirdmax =x[n-3];
+	int Thirdmin=x[2];
+	System.out.println(Thirdmax+","+Thirdmin);
+}
+}
+
+
+/////////////////////////////////
+package p1;
+@FunctionalInterface
+ interface Evenodd {
+ void check (int i);
+	 
+ }
+
+public class K{
+	public static void main(String[] args) {
+		Evenodd  evenodd= (i)->{if(i%2==0)
+		{System.out.println("Number.."+i+".is Even");
+		 }else {
+			 System.out.println("Number"+i+"is Odd"); 
+		 }
+	};
+	evenodd.check(107);
+}
+}
 ////////////////////////////////
 package P1;
 
@@ -94,40 +383,64 @@ import java.util.Scanner;
 public class A {
 	public static void main(String[] args) {
 	
-int[] x = {2, 7, 3, 13, 22, 5, 9,21,4,1};
+package p1;
 
 
 
-int largest = Integer.MIN_VALUE;
-int secondLargest = Integer.MIN_VALUE;
-int smallest = Integer.MAX_VALUE;
-int secondSmallest = Integer.MAX_VALUE;
+	public class A {
+		public static void main(String[] args) {
+			
+		
+		int[] x = {2, 7, 3, 13, 22, 5, 9,21,4,1};
 
-for (int i = 0; i < x.length; i++) {
-	
-    if (x[i] > largest) {
-        secondLargest = largest;
-        largest = x[i];
-        
-	} else if (x[i] > secondLargest ) {
-        secondLargest = x[i];
-    }
 
-    if (x[i] < smallest) {
-        secondSmallest = smallest;
-        smallest = x[i];
-        
-        
-	} else if (x[i] < secondSmallest ) {
-        secondSmallest = x[i];
-    }
-}
 
-System.out.print("Second largest number is: " + secondLargest);
-System.out.println("\n");
-System.out.print("Second smallest number is: " + secondSmallest);
-       
-}}
+		int largest = Integer.MIN_VALUE;
+		int secondLargest = Integer.MIN_VALUE;
+		int thirdlargest =Integer.MIN_VALUE;
+		int smallest = Integer.MAX_VALUE;
+		int secondSmallest =Integer.MAX_VALUE;
+		int thirdsmallest=Integer.MAX_VALUE;;
+		{
+			
+		for (int i = 0; i < x.length; i++) {
+			
+		    if (x[i] > largest) {
+		        secondLargest = largest;
+		        largest = x[i];
+		        
+			} else if (x[i] > secondLargest ) {
+				thirdlargest=secondLargest;
+		        secondLargest = x[i];
+		    
+		    
+		} else if (x[i] > thirdlargest ) {
+	       x[i]=thirdlargest;
+	       
+	       
+	    }
+		    if (x[i] < smallest) {
+		        secondSmallest = smallest;
+		        smallest = x[i];
+		        
+		        
+			} else if (x[i] < secondSmallest ) {
+				thirdsmallest=secondSmallest;
+			
+		        secondSmallest = x[i];
+		    }
+			else if (x[i] < thirdsmallest ) {
+		        x[i]=thirdsmallest;
+		}
+		}
+		System.out.print("First smallest&Largest number is: " +largest+","+smallest );
+		System.out.println();
+		System.out.print("Second largest&Smallest number is: " + secondLargest+","+secondSmallest);
+	System.out.println();
+		System.out.println("Third smallest & Largest number is:"+thirdlargest+","+thirdsmallest);
+		       
+		}}}
+
 ////////////////////////////////
 public class A { Reverse A Given number or Palindrom
 	 public static void main(String[] args) {
@@ -144,7 +457,25 @@ public class A { Reverse A Given number or Palindrom
 	 }
 	}
 //////////////////////////////////////
+package p1;
 
+import java.util.Arrays;
+import java.util.LinkedHashSet;
+import java.util.Set;
+
+public class A {
+public static void main(String[] args) {
+	
+	//Reverse a string
+	String str  = "Chilakala farooq";
+	
+	StringBuilder stringBuilder = new StringBuilder(str).reverse();
+	System.out.println(stringBuilder);
+	//qooraf alakalihC
+	}
+
+}
+////////////////////////////////////////
 public class A { //Reverse a given string
 
 public static void main(String[] args){
@@ -163,6 +494,20 @@ System.out.print(str.length());
 }
 
 }//35
+////////////////////////////////////////
+//Reverse a string
+	String str  = "Chilakala farooq   ";
+	StringBuilder stringBuilder = new StringBuilder(str).reverse();
+	System.out.println(stringBuilder);
+	System.out.println(str.length());
+	
+	String[] words = new StringBuilder(str.trim()).reverse().toString().split("\\s+");
+    for (String word : words) {
+        System.out.println(word);
+        System.out.println(word.length());
+    }
+   
+	
 
 ///////////////////////////////////////
 
@@ -295,6 +640,7 @@ System.out.println("Not prime");
 }}
 
 		(OR)
+//a prime number is a number that is only divisible by 1 and itself.
 
 public class A{
 public static void main(String...x){
@@ -315,6 +661,35 @@ else{
 System.out.println("is  prime"+n);
 }}
 }}
+/////////////////////////////////////////////
+public class A {
+public static void main(String[] args) {
+
+
+
+	//Prime number 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31,
+	//37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 
+Scanner Scan = new Scanner (System.in);
+System.out.println("Enter a number...");
+int n = Scan.nextInt();
+if(n==1) {
+	System.out.println(n+"...is not prime");
+}
+else if (n==2) {
+	System.out.println(n+"....is prime");
+	
+}
+//if n is divisible by 2, 3, 5, or 7. If n is divisible by any of these numbers,
+//the program prints the message "n...is not prime".
+else if (n%2==0||n%4==0||n%5==0||n%7==0) {
+	System.out.println(n+"...is not prime");
+}
+
+else {
+	System.out.println(n+".......is prime");
+}
+}
+}
 /////////////////////////////////////////////
 public class A{
 public static void main(String...x){
@@ -438,7 +813,81 @@ else if(n==2) {
 	System.out.println(n+"...is prime");
 }
     }}
-/////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+package p1;
+
+import java.util.Scanner;
+
+
+
+public class A {
+public static void main(String[] args) {
+
+//palidrome number
+	Scanner scan = new Scanner
+			(System.in)
+			;
+	System.out.println("Enter a number......");
+String input = scan.next();
+	if(isPalidrome(input))
+		System.out.println(input+"..is palidrome number");
+	else 
+		System.out.println(input+" ..is not palidrome number...");
+}
+
+private static boolean isPalidrome(String input1) {
+	String str = new StringBuilder(input1).reverse().toString();
+	return input1.equals(str);
+}
+
+
+}
+
+
+////////////////////////////////////////////////////////////////
+package p1;
+
+import java.util.Scanner;
+
+
+
+public class A {
+public static void main(String[] args) {
+
+//palidrome number
+	Scanner scan = new Scanner
+			(System.in)
+			;
+	System.out.println("Enter a number....");
+	int input = scan.nextInt();
+	if (isPalindrome(input)) 
+		System.out.println(input+"...is palidrome number ");
+		else 
+			System.out.println(input+"...is not palidrome number ");
+	}
+
+public static boolean isPalindrome(int n) {
+    String str = String.valueOf(n);
+    String reversed = new StringBuilder(str).reverse().toString();
+    return str.equals(reversed);
+}
+
+}
+//	        Scanner scanner = new Scanner(System.in);
+//	        System.out.println("Enter a string:");
+//	        String input = scanner.nextLine();
+//	        
+//	        if (isPalindrome(input)) {
+//	            System.out.println(input + " is a palindrome.");
+//	        } else {
+//	            System.out.println(input + " is not a palindrome.");
+//	        }
+//	    }
+//
+//	    public static boolean isPalindrome(String str) {
+//	        String reversed = new StringBuilder(str).reverse().toString();
+//	        return str.equals(reversed);
+//////////////////////////////////////////////////////////////
 A palindrome number is a number that is same after reverse.
 package p1;
 
@@ -492,6 +941,30 @@ factorial.....120
 Enter a number:
 8
 factorial.....40320
+//////////////////////////////////////////////
+package p1;
+
+import java.util.Scanner;
+
+
+
+public class A {
+public static void main(String[] args) {
+
+//Factorial number
+	Scanner scan = new Scanner
+			(System.in)
+			;
+	System.out.println("Enter a number......");
+	int number,factorial=1;
+	number =scan.nextInt();
+	for (int i = 1; i <=number; i++) {
+		factorial=factorial*i;		
+	}
+	System.out.println(factorial);
+}
+
+}
 /////////////////////////////////////////////
 package p1;
 
